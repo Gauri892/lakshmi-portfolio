@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import { ArrowDownRight, ArrowUpRight, Code2, Layers3, Workflow, Database, Github, Linkedin, Mail, Menu, X, CheckCircle2, Sparkles } from 'lucide-react';
+
+const currentProjects = [
+  { name: 'Mobile Must Have', url: 'https://mobilemusthave.com/', type: 'Shopify Plus · E-commerce', description: 'Ongoing Shopify Plus development, custom functionality, discount logic, integrations, analytics and production enhancements.' },
+  { name: 'RoamLink', url: 'https://roamlink.com/', type: 'E-commerce · Connectivity', description: 'Custom storefront and backend development, product experiences, integrations and ongoing technical improvements.' },
+  { name: 'RV Mobile Internet', url: 'https://www.rvmobileinternet.com/', type: 'E-commerce · Content', description: 'Ongoing development and technical support, including storefront functionality and e-commerce enhancements.' },
+];
+const pastProjects = [
+  { name: 'Captain Soup', url: 'https://captainsoup.com/', description: 'Built a custom application for flexible bundle creation, including different pricing options and ingredient-based filters.' },
+  { name: 'Scentco Inc.', url: 'https://scentcoinc.com/', description: 'Integrated website and mobile app systems through APIs, including order data exchange and synchronisation.' },
+  { name: 'ZQuiet', url: 'https://zquiet.com/', description: 'Developed advanced custom features and integrated third-party services to extend e-commerce functionality.' },
+  { name: 'Walls Need Love', url: 'https://wallsneedlove.com/', description: 'Took over an existing project, resolved inherited technical issues and delivered core custom features.' },
+  { name: 'Drake General Store', url: 'https://www.drakegeneralstore.ca/', description: 'Developed a custom app and key storefront features, including a voting feature for drafted products.' },
+];
+const skills = [
+  ['Shopify & commerce', 'Shopify Plus', 'Shopify Liquid', 'Shopify Functions', 'Custom Apps', 'Checkout Extensions', 'Shopify Flow'],
+  ['Frontend', 'React.js', 'JavaScript', 'TypeScript', 'HTML', 'CSS'],
+  ['Backend & APIs', 'Node.js', 'PHP', 'GraphQL', 'REST APIs', 'Laravel (basic)'],
+  ['Data & delivery', 'MySQL', 'MongoDB', 'Git / GitHub', 'CI/CD', 'AWS / Cloud Hosting', 'Playwright'],
+];
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+  return <>
+    <header className="topbar"><a className="brand" href="#home" onClick={closeMenu}><span className="brand-mark">LK</span><span>LAKSHMI KAUR<span className="brand-sub">DEVELOPER PORTFOLIO</span></span></a>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">{menuOpen ? <X/> : <Menu/>}</button>
+      <nav className={menuOpen ? 'nav open' : 'nav'}>{[['About','#about'],['Expertise','#expertise'],['Projects','#projects'],['Experience','#experience'],['Contact','#contact']].map(([label,href])=><a key={label} href={href} onClick={closeMenu}>{label}</a>)}</nav>
+      <a className="top-cta" href="mailto:Laxmltgauri@gmail.com">Let's talk <ArrowUpRight size={15}/></a>
+    </header>
+
+    <main id="home">
+      <section className="hero section-wrap">
+        <div className="hero-copy"><div className="eyebrow"><span className="live-dot"/> AVAILABLE FOR INTERNATIONAL OPPORTUNITIES</div>
+          <p className="hello">Hello, I'm Lakshmi Kaur.</p>
+          <h1>I build digital<br/><span>commerce experiences</span><br/>that work harder.</h1>
+          <p className="hero-text">Senior Shopify Full Stack Developer with 10+ years of experience building custom e-commerce solutions, Shopify Plus applications and robust backend systems.</p>
+          <div className="hero-actions"><a className="button primary" href="#projects">Explore my work <ArrowUpRight size={17}/></a><a className="button secondary" href="mailto:Laxmltgauri@gmail.com">Get in touch <ArrowUpRight size={17}/></a></div>
+          <div className="hero-meta"><span><b>10+</b> years experience</span><i/><span><b>Shopify Plus</b> specialist</span><i/><span><b>India</b> · Open to relocation</span></div>
+        </div>
+        <div className="hero-art" aria-label="Abstract code illustration"><div className="orbit orbit-one"/><div className="orbit orbit-two"/><div className="code-window"><div className="window-head"><span/><span/><span/><small>commerce.ts</small></div><div className="code-lines"><p><em>01</em> <b>const</b> developer = {'{'}</p><p><em>02</em> &nbsp; focus: <i>'Shopify Plus'</i>,</p><p><em>03</em> &nbsp; build: [</p><p><em>04</em> &nbsp;&nbsp; <i>'Custom apps'</i>,</p><p><em>05</em> &nbsp;&nbsp; <i>'Scalable systems'</i>,</p><p><em>06</em> &nbsp;&nbsp; <i>'Great experiences'</i></p><p><em>07</em> &nbsp; ],</p><p><em>08</em> &nbsp; mindset: <strong>'Always learning'</strong></p><p><em>09</em> {'}'}</p></div><div className="window-foot"><span className="terminal-dot"/> Building something useful<span className="cursor">_</span></div></div><div className="float-card card-shopify"><span className="float-icon">✳</span><span><b>Shopify Plus</b><small>Commerce engineering</small></span></div><div className="float-card card-api"><Code2 size={18}/><span><b>API integrations</b><small>Connected systems</small></span></div><div className="hero-glow"/></div>
+        <a className="scroll-hint" href="#about"><span>SCROLL TO EXPLORE</span><ArrowDownRight size={16}/></a>
+      </section>
+
+      <section className="about section-wrap" id="about"><div className="section-kicker">01 / ABOUT</div><div className="section-grid"><div><h2>Engineering with<br/><span>purpose & precision.</span></h2></div><div className="about-copy"><p className="lead">I turn complex business requirements into reliable, scalable digital products.</p><p>I'm a full stack developer with more than a decade of experience across e-commerce and web development. My strongest focus is Shopify Plus and custom app development, with hands-on experience across frontend interfaces, backend systems, integrations and production support.</p><p>I enjoy solving difficult technical problems, improving existing platforms and collaborating directly with clients and teams to deliver practical solutions.</p><div className="about-tags"><span><CheckCircle2/> Client collaboration</span><span><CheckCircle2/> End-to-end ownership</span><span><CheckCircle2/> Production-minded delivery</span></div></div></div></section>
+
+      <section className="expertise section-wrap" id="expertise"><div className="section-kicker">02 / EXPERTISE</div><div className="section-heading"><h2>Tools of the <span>trade.</span></h2><p>A practical mix of commerce platforms, application engineering and delivery tools.</p></div><div className="skill-grid">{skills.map(([title,...items],i)=><article className="skill-card" key={title}><div className="skill-icon">{[<Layers3/>,<Code2/>,<Workflow/>,<Database/>][i]}</div><h3>{title}</h3><div className="skill-pills">{items.map(item=><span key={item}>{item}</span>)}</div></article>)}</div></section>
+
+      <section className="projects section-wrap" id="projects"><div className="section-kicker">03 / SELECTED WORK</div><div className="section-heading"><h2>Projects built to <span>make an impact.</span></h2><p>Current client work and selected projects from across my development career.</p></div><div className="project-label"><span className="label-line"/> CURRENT PROJECTS <span className="label-note">Ongoing work</span></div><div className="current-project-grid">{currentProjects.map((p,i)=><article className="project-card current-card" key={p.name}><div className="project-top"><span>0{i+1}</span><a href={p.url} target="_blank" rel="noreferrer" aria-label={`Visit ${p.name}`}><ArrowUpRight/></a></div><div className="project-symbol">{['MMH','RL','RV'][i]}</div><p className="project-type">{p.type}</p><h3>{p.name}</h3><p>{p.description}</p><a className="text-link" href={p.url} target="_blank" rel="noreferrer">Visit website <ArrowUpRight size={14}/></a></article>)}</div><div className="project-label past-label"><span className="label-line"/> PAST PROJECTS <span className="label-note">Selected experience</span></div><div className="past-project-grid">{pastProjects.map((p,i)=><article className="past-project" key={p.name}><div className="past-index">0{i+1}</div><div><h3>{p.name}</h3><p>{p.description}</p><a href={p.url} target="_blank" rel="noreferrer">View project <ArrowUpRight size={13}/></a></div></article>)}</div></section>
+
+      <section className="experience section-wrap" id="experience"><div className="section-kicker">04 / EXPERIENCE</div><div className="section-heading"><h2>Experience that <span>keeps evolving.</span></h2><p>Professional journey across web development, e-commerce and software engineering.</p></div><div className="timeline"><article><div className="timeline-date">JAN 2022 — PRESENT</div><div className="timeline-main"><h3>Senior Software Engineer</h3><p className="company">Resourcifi Inc.</p><p>Leading hands-on development across three ongoing client projects, with a focus on Shopify Plus, custom apps and backend functionality. Responsibilities include Shopify Functions, checkout extensions, integrations, analytics, production troubleshooting and direct client communication. Also supports and mentors junior developers.</p><div className="timeline-tags"><span>Shopify Plus</span><span>Custom apps</span><span>Technical ownership</span></div></div></article><article><div className="timeline-date">JUN 2021 — NOV 2021</div><div className="timeline-main"><h3>Web Developer</h3><p className="company">Thor Solutions</p><p>Shopify website and theme development, custom e-commerce functionality, and frontend/backend implementation.</p></div></article><article><div className="timeline-date">JAN 2019 — MAR 2020</div><div className="timeline-main"><h3>Web Developer</h3><p className="company">AmelCS — Ameliorate Corporate Solutions Pvt. Ltd.</p><p>WordPress and Magento development, e-commerce customisation and full-stack website implementation.</p></div></article><article><div className="timeline-date">DEC 2017 — JAN 2019</div><div className="timeline-main"><h3>Web Developer</h3><p className="company">Webroot Technologies</p><p>WordPress and Magento development, e-commerce customisation, maintenance and troubleshooting.</p></div></article><article><div className="timeline-date">2014 — 2017</div><div className="timeline-main"><h3>Technical Support & Web Development</h3><p className="company">Self-employed</p><p>Website development and technical support for client requirements.</p></div></article></div></section>
+
+      <section className="ai-section section-wrap"><div className="ai-panel"><div className="ai-icon"><Sparkles/></div><div><div className="section-kicker">AI-ASSISTED ENGINEERING</div><h2>Human judgement.<br/><span>AI-accelerated workflows.</span></h2><p>I use AI coding assistants and agents to explore solutions, understand codebases, accelerate implementation, debug and review code. I remain responsible for architecture, validation, testing and production quality.</p></div><div className="ai-stamp">BUILD<br/>SMARTER<span>✳</span></div></div></section>
+
+      <section className="contact section-wrap" id="contact"><div className="section-kicker">05 / CONTACT</div><div className="contact-inner"><div><h2>Have a good project<br/>in <span>mind?</span></h2><p>I'm open to discussing interesting development opportunities and international roles.</p></div><div className="contact-links"><a href="mailto:Laxmltgauri@gmail.com"><Mail/> Laxmltgauri@gmail.com <ArrowUpRight/></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><Linkedin/> Connect on LinkedIn <ArrowUpRight/></a><a href="https://github.com/" target="_blank" rel="noreferrer"><Github/> GitHub profile <ArrowUpRight/></a></div></div></section>
+    </main>
+    <footer className="footer"><a className="brand" href="#home"><span className="brand-mark">LK</span><span>LAKSHMI KAUR<span className="brand-sub">SENIOR SHOPIFY FULL STACK DEVELOPER</span></span></a><p>Designed & built with care. © {new Date().getFullYear()} Lakshmi Kaur.</p><a href="#home" className="back-top">BACK TO TOP ↑</a></footer>
+  </>;
+}
+export default App;
